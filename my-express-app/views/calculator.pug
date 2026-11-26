@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title Máy tính đơn giản
+        link(rel="stylesheet", href="/styles.css")
+    body
+        h1 Máy tính đơn giản
+
+        form(action="/calculator/calculate", method="POST")
+            label(for="num1") Số thứ nhất:
+            input(type="number", name="num1", step="any", required)
+
+            label(for="num2") Số thứ hai:
+            input(type="number", name="num2", step="any", required)
+
+            label(for="operation") Phép tính:
+            select(name="operation")
+                option(value="add") Cộng
+                option(value="subtract") Trừ
+                option(value="multiply") Nhân
+                option(value="divide") Chia
+
+            button(type="submit") Tính toán
+
+        if result !== undefined
+            h2 Kết quả: #{result}
